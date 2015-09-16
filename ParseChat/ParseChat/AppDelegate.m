@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "LoginViewController.h"
+#import "ChatViewController.h"
 #import "AccountManager.h"
 
 @interface AppDelegate ()
@@ -31,7 +32,7 @@
         viewController = [[LoginViewController alloc] init];
     } else {
         //show chat view
-        
+        viewController = [[ChatViewController alloc] init];
     }
     
     UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:viewController];

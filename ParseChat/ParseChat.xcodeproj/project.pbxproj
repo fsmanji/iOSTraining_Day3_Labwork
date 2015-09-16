@@ -10,6 +10,8 @@
 		57F0B82F6D801B4FD74DC1F7 /* libPods-ParseChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1DC063B99C0793FBD51224 /* libPods-ParseChat.a */; };
 		B30859E81BAA0DD8003D8138 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = B30859E71BAA0DD8003D8138 /* Utility.m */; };
 		B30859EB1BAA106C003D8138 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B30859EA1BAA106C003D8138 /* AccountManager.m */; };
+		B30859EF1BAA1584003D8138 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30859ED1BAA1584003D8138 /* ChatViewController.m */; };
+		B30859F01BAA1584003D8138 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30859EE1BAA1584003D8138 /* ChatViewController.xib */; };
 		B3FEFC051BA9FE7100973E70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FEFC041BA9FE7100973E70 /* main.m */; };
 		B3FEFC081BA9FE7100973E70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FEFC071BA9FE7100973E70 /* AppDelegate.m */; };
 		B3FEFC0E1BA9FE7100973E70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FEFC0C1BA9FE7100973E70 /* Main.storyboard */; };
@@ -35,6 +37,9 @@
 		B30859E71BAA0DD8003D8138 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		B30859E91BAA106C003D8138 /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
 		B30859EA1BAA106C003D8138 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
+		B30859EC1BAA1584003D8138 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		B30859ED1BAA1584003D8138 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		B30859EE1BAA1584003D8138 /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		B3FEFBFF1BA9FE7100973E70 /* ParseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FEFC031BA9FE7100973E70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3FEFC041BA9FE7100973E70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -173,6 +178,9 @@
 				B3FEFC2B1BA9FFAF00973E70 /* LoginViewController.h */,
 				B3FEFC2C1BA9FFAF00973E70 /* LoginViewController.m */,
 				B3FEFC2D1BA9FFAF00973E70 /* LoginViewController.xib */,
+				B30859EC1BAA1584003D8138 /* ChatViewController.h */,
+				B30859ED1BAA1584003D8138 /* ChatViewController.m */,
+				B30859EE1BAA1584003D8138 /* ChatViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -261,6 +269,7 @@
 			files = (
 				B3FEFC0E1BA9FE7100973E70 /* Main.storyboard in Resources */,
 				B3FEFC101BA9FE7100973E70 /* Images.xcassets in Resources */,
+				B30859F01BAA1584003D8138 /* ChatViewController.xib in Resources */,
 				B3FEFC2F1BA9FFAF00973E70 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +323,7 @@
 			files = (
 				B30859E81BAA0DD8003D8138 /* Utility.m in Sources */,
 				B30859EB1BAA106C003D8138 /* AccountManager.m in Sources */,
+				B30859EF1BAA1584003D8138 /* ChatViewController.m in Sources */,
 				B3FEFC2E1BA9FFAF00973E70 /* LoginViewController.m in Sources */,
 				B3FEFC081BA9FE7100973E70 /* AppDelegate.m in Sources */,
 				B3FEFC051BA9FE7100973E70 /* main.m in Sources */,
