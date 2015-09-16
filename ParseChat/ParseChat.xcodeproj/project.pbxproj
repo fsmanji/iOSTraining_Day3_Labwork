@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		57F0B82F6D801B4FD74DC1F7 /* libPods-ParseChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1DC063B99C0793FBD51224 /* libPods-ParseChat.a */; };
+		B30859E81BAA0DD8003D8138 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = B30859E71BAA0DD8003D8138 /* Utility.m */; };
+		B30859EB1BAA106C003D8138 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B30859EA1BAA106C003D8138 /* AccountManager.m */; };
 		B3FEFC051BA9FE7100973E70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FEFC041BA9FE7100973E70 /* main.m */; };
 		B3FEFC081BA9FE7100973E70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FEFC071BA9FE7100973E70 /* AppDelegate.m */; };
-		B3FEFC0B1BA9FE7100973E70 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FEFC0A1BA9FE7100973E70 /* ViewController.m */; };
 		B3FEFC0E1BA9FE7100973E70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FEFC0C1BA9FE7100973E70 /* Main.storyboard */; };
 		B3FEFC101BA9FE7100973E70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FEFC0F1BA9FE7100973E70 /* Images.xcassets */; };
 		B3FEFC1F1BA9FE7200973E70 /* ParseChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FEFC1E1BA9FE7200973E70 /* ParseChatTests.m */; };
@@ -30,13 +31,15 @@
 
 /* Begin PBXFileReference section */
 		9EAACAF0B282D5C9CCAF8EC3 /* Pods-ParseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParseChat/Pods-ParseChat.release.xcconfig"; sourceTree = "<group>"; };
+		B30859E61BAA0DD8003D8138 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		B30859E71BAA0DD8003D8138 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		B30859E91BAA106C003D8138 /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
+		B30859EA1BAA106C003D8138 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
 		B3FEFBFF1BA9FE7100973E70 /* ParseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FEFC031BA9FE7100973E70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3FEFC041BA9FE7100973E70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B3FEFC061BA9FE7100973E70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3FEFC071BA9FE7100973E70 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B3FEFC091BA9FE7100973E70 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B3FEFC0A1BA9FE7100973E70 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B3FEFC0D1BA9FE7100973E70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3FEFC0F1BA9FE7100973E70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B3FEFC181BA9FE7200973E70 /* ParseChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParseChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,11 +116,11 @@
 				B3FEFC281BA9FF7C00973E70 /* Views */,
 				B3FEFC061BA9FE7100973E70 /* AppDelegate.h */,
 				B3FEFC071BA9FE7100973E70 /* AppDelegate.m */,
-				B3FEFC091BA9FE7100973E70 /* ViewController.h */,
-				B3FEFC0A1BA9FE7100973E70 /* ViewController.m */,
 				B3FEFC0C1BA9FE7100973E70 /* Main.storyboard */,
 				B3FEFC0F1BA9FE7100973E70 /* Images.xcassets */,
 				B3FEFC021BA9FE7100973E70 /* Supporting Files */,
+				B30859E61BAA0DD8003D8138 /* Utility.h */,
+				B30859E71BAA0DD8003D8138 /* Utility.m */,
 			);
 			path = ParseChat;
 			sourceTree = "<group>";
@@ -158,6 +161,8 @@
 		B3FEFC291BA9FF8800973E70 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B30859E91BAA106C003D8138 /* AccountManager.h */,
+				B30859EA1BAA106C003D8138 /* AccountManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -307,8 +312,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B30859E81BAA0DD8003D8138 /* Utility.m in Sources */,
+				B30859EB1BAA106C003D8138 /* AccountManager.m in Sources */,
 				B3FEFC2E1BA9FFAF00973E70 /* LoginViewController.m in Sources */,
-				B3FEFC0B1BA9FE7100973E70 /* ViewController.m in Sources */,
 				B3FEFC081BA9FE7100973E70 /* AppDelegate.m in Sources */,
 				B3FEFC051BA9FE7100973E70 /* main.m in Sources */,
 			);

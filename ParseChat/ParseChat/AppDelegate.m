@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-
+#import "LoginViewController.h"
+#import "AccountManager.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +20,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //register Parse clietn
     [Parse setApplicationId:@"DXsvTSLgsKT03gSSqy6V5KbLwVpgfEjmEsKzzQUP" clientKey: @"BXAzmCJhMtIVWhLVEiKIMzPCA5XI0Nt9NwvAOPVd"];
+    AccountManager* sharedManager = [AccountManager sharedManager];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    id viewController;
+    if(![sharedManager isLoggedIn]) {
+        //show login view
+        viewController = [[LoginViewController alloc] init];
+    } else {
+        //show chat view
+        
+    }
+    
+    UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.window.rootViewController = navController;
+    
+    //for keyboard
+    //In simulator, you need to disconnect hardware keyboard, otherwise the soft keyboard won't show up in simulator
+    [self.window makeKeyAndVisible];
+
+    
     return YES;
 }
 
