@@ -13,6 +13,7 @@
 
 extern NSString *kMessageClassName;
 extern NSString *kMessageTextPropertyName;
+extern NSString *kMessageUserPropertyName;
 
 +(void)showAlert:(id)target with:(NSString *)title withMessage:(NSString *)message;
 

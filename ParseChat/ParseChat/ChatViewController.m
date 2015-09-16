@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property UIRefreshControl *refreshControl;
 @property NSArray* messageList;
+@property AccountManager* accountManager;
+@property BOOL bFilterByUser;
 
 @end
 
@@ -42,6 +44,8 @@
     //add settings item
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(showSettingView)];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"FilterUser" style:UIBarButtonItemStylePlain target:self action:@selector(filterByUser)];
+    
     // Do any additional setup after loading the view from its nib.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -50,17 +54,24 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(onRefresh) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
+    _accountManager = [AccountManager sharedManager];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    
-    AccountManager* manager = [AccountManager sharedManager];
-    if([manager isLoggedIn]) {
+    self.navigationItem.leftBarButtonItem.title = _bFilterByUser? @"AllMessage":@"MyMessage";
+    if([_accountManager isLoggedIn]) {
         //load previous messages
         [self retrieveMessages];
     } else {
         [self showLoginView];
     }
+}
+
+-(void)filterByUser {
+    _bFilterByUser = !_bFilterByUser;
+    self.navigationItem.leftBarButtonItem.title = _bFilterByUser? @"AllMessage":@"MyMessage";
+    [self onRefresh];
 }
 
 -(void)showSettingView {
@@ -82,7 +93,9 @@
 - (IBAction)onSend:(id)sender {
     PFObject* message = [PFObject objectWithClassName:kMessageClassName];
     message[kMessageTextPropertyName] = self.textInput.text;
-            
+    if(_bFilterByUser) {
+        message[kMessageUserPropertyName] = [_accountManager currentUser];
+    }
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -98,9 +111,21 @@
 }
 
 - (void) retrieveMessages {
+    AccountManager* manager = [AccountManager sharedManager];
     PFQuery *query = [PFQuery queryWithClassName:kMessageClassName];
-    //[query whereKey:@"playerName" equalTo:@"Dan Stemkoski"];
+    //sort by create time
     [query orderByDescending:@"createdAt"];
+    
+    if(_bFilterByUser) {
+        PFUser* author = [manager currentUser];
+        
+        // configure any constraints on your query...
+        [query whereKey:kMessageUserPropertyName equalTo:author];
+        
+    // tell the query to fetch all of the Author objects along with the Book
+        [query includeKey:kMessageUserPropertyName];
+    }
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
         dispatch_async(dispatch_get_main_queue(), ^{

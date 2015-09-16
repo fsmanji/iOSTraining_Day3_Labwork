@@ -12,6 +12,7 @@
 
 NSString *kMessageClassName = @"Message";
 NSString *kMessageTextPropertyName = @"text";
+NSString *kMessageUserPropertyName = @"user";
 
 +(void)showAlert:(id)target with:(NSString *)title withMessage:(NSString *)message {
     
