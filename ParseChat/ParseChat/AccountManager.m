@@ -40,6 +40,10 @@
     return [PFUser currentUser];
 }
 
+-(void)logOut {
+    [PFUser logOut];
+}
+
 - (void)dealloc {
     // Should never be called, but just here for clarity really.
 }

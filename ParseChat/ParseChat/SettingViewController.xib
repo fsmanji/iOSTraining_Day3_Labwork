@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController">
+            <connections>
+                <outlet property="logoutButton" destination="Cmm-FO-Krg" id="6u7-dD-kA5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmm-FO-Krg">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.1332475689" blue="0.15272926959999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="VPz-CU-fYG"/>
+                        <constraint firstAttribute="width" constant="356" id="jlH-VV-kCk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal" title="Signout">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="VPz-CU-fYG"/>
+                            <exclude reference="jlH-VV-kCk"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="VPz-CU-fYG"/>
+                            <include reference="jlH-VV-kCk"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="onLogout:" destination="-1" eventType="touchUpInside" id="FLo-Su-g7T"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Cmm-FO-Krg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="22" id="U4J-mv-IHi"/>
+                <constraint firstAttribute="trailing" secondItem="Cmm-FO-Krg" secondAttribute="trailing" constant="22" id="iNO-IN-9xH"/>
+                <constraint firstAttribute="bottom" secondItem="Cmm-FO-Krg" secondAttribute="bottom" constant="273" id="n3V-W2-6cA"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Cmm-FO-Krg"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="U4J-mv-IHi"/>
+                    <exclude reference="iNO-IN-9xH"/>
+                    <exclude reference="n3V-W2-6cA"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="Cmm-FO-Krg"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="U4J-mv-IHi"/>
+                    <include reference="iNO-IN-9xH"/>
+                    <include reference="n3V-W2-6cA"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

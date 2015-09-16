@@ -26,15 +26,8 @@
     AccountManager* sharedManager = [AccountManager sharedManager];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    id viewController;
-    if(![sharedManager isLoggedIn]) {
-        //show login view
-        viewController = [[LoginViewController alloc] init];
-    } else {
-        //show chat view
-        viewController = [[ChatViewController alloc] init];
-    }
-    
+    ChatViewController *viewController = [[ChatViewController alloc] init];
+
     UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:viewController];
     self.window.rootViewController = navController;
     

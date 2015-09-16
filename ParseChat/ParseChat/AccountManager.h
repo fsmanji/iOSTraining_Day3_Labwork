@@ -21,8 +21,10 @@
 
 +(id)sharedManager;
 
-- (BOOL)isLoggedIn;
+-(BOOL)isLoggedIn;
 
-- (PFUser *)currentUser;
+-(PFUser *)currentUser;
+
+-(void)logOut;
 
 @end

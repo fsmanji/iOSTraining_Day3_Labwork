@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		57F0B82F6D801B4FD74DC1F7 /* libPods-ParseChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1DC063B99C0793FBD51224 /* libPods-ParseChat.a */; };
+		B3038EDF1BAA23C200D546A5 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3038EDD1BAA23C200D546A5 /* SettingViewController.m */; };
+		B3038EE01BAA23C200D546A5 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3038EDE1BAA23C200D546A5 /* SettingViewController.xib */; };
 		B30859E81BAA0DD8003D8138 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = B30859E71BAA0DD8003D8138 /* Utility.m */; };
 		B30859EB1BAA106C003D8138 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B30859EA1BAA106C003D8138 /* AccountManager.m */; };
 		B30859EF1BAA1584003D8138 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30859ED1BAA1584003D8138 /* ChatViewController.m */; };
@@ -33,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		9EAACAF0B282D5C9CCAF8EC3 /* Pods-ParseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParseChat/Pods-ParseChat.release.xcconfig"; sourceTree = "<group>"; };
+		B3038EDC1BAA23C200D546A5 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		B3038EDD1BAA23C200D546A5 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		B3038EDE1BAA23C200D546A5 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		B30859E61BAA0DD8003D8138 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		B30859E71BAA0DD8003D8138 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		B30859E91BAA106C003D8138 /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
@@ -181,6 +186,9 @@
 				B30859EC1BAA1584003D8138 /* ChatViewController.h */,
 				B30859ED1BAA1584003D8138 /* ChatViewController.m */,
 				B30859EE1BAA1584003D8138 /* ChatViewController.xib */,
+				B3038EDC1BAA23C200D546A5 /* SettingViewController.h */,
+				B3038EDD1BAA23C200D546A5 /* SettingViewController.m */,
+				B3038EDE1BAA23C200D546A5 /* SettingViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -268,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FEFC0E1BA9FE7100973E70 /* Main.storyboard in Resources */,
+				B3038EE01BAA23C200D546A5 /* SettingViewController.xib in Resources */,
 				B3FEFC101BA9FE7100973E70 /* Images.xcassets in Resources */,
 				B30859F01BAA1584003D8138 /* ChatViewController.xib in Resources */,
 				B3FEFC2F1BA9FFAF00973E70 /* LoginViewController.xib in Resources */,
@@ -324,6 +333,7 @@
 				B30859E81BAA0DD8003D8138 /* Utility.m in Sources */,
 				B30859EB1BAA106C003D8138 /* AccountManager.m in Sources */,
 				B30859EF1BAA1584003D8138 /* ChatViewController.m in Sources */,
+				B3038EDF1BAA23C200D546A5 /* SettingViewController.m in Sources */,
 				B3FEFC2E1BA9FFAF00973E70 /* LoginViewController.m in Sources */,
 				B3FEFC081BA9FE7100973E70 /* AppDelegate.m in Sources */,
 				B3FEFC051BA9FE7100973E70 /* main.m in Sources */,

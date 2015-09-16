@@ -10,6 +10,8 @@
 #import <Parse/Parse.h>
 #import "Utility.h"
 #import "AccountManager.h"
+#import "ChatViewController.h"
+#import "SettingViewController.h"
 
 @interface LoginViewController ()
 
@@ -27,6 +29,15 @@
 
 @implementation LoginViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(self) {
+        self.title = @"Parse Chat Login";
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -35,14 +46,9 @@
     //load test account into view
     self.usernameInput.text = _accountManager.username;
     self.passwordInput.text = _accountManager.password;
-    
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (IBAction)onSignInClicked:(id)sender {
     
     [PFUser logInWithUsernameInBackground:self.usernameInput.text password:self.passwordInput.text
@@ -50,6 +56,7 @@
                                         if (user) {
                                             // Do stuff after successful login.
                                             NSLog(@"Login sucessful: %@", user);
+                                            [self exitView];
                                         } else {
                                             // The login failed. Check error to see why.
                                             
@@ -73,7 +80,7 @@
         if (!error) {   // Hooray! Let them use the app now.
             NSLog(@"Signup sucessful: %@", user);
 
-            
+            [self exitView];
         } else {
             NSString *errorString = [error userInfo][@"error"];
             // Show the errorString somewhere and let the user try again.
@@ -84,6 +91,19 @@
     
 }
 
+-(void)exitView {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) showChatView {
+   ChatViewController* chatViewController = [[ChatViewController alloc] init];
+    [self.navigationController pushViewController:chatViewController animated:YES];
+}
+
+-(void)showSettingView {
+    SettingViewController* viewController = [[SettingViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
 - (IBAction)onUsernameChanged:(id)sender {
 }
@@ -98,14 +118,9 @@
     [self dismissKeyboard];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
-*/
 
 @end

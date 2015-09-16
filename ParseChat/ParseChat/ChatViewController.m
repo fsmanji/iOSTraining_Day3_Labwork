@@ -9,6 +9,10 @@
 #import "ChatViewController.h"
 #import <Parse/Parse.h>
 #import "Utility.h"
+#import "SettingViewController.h"
+#import "LoginViewController.h"
+
+#import "AccountManager.h"
 
 @interface ChatViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textInput;
@@ -21,8 +25,23 @@
 
 @implementation ChatViewController
 
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(self) {
+        self.title = @"Parse Chat";
+    }
+    
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //add settings item
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(showSettingView)];
+    
     // Do any additional setup after loading the view from its nib.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -31,9 +50,28 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(onRefresh) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
+}
 
-    //load previous messages
-    [self retrieveMessages];
+-(void)viewWillAppear:(BOOL)animated {
+    
+    AccountManager* manager = [AccountManager sharedManager];
+    if([manager isLoggedIn]) {
+        //load previous messages
+        [self retrieveMessages];
+    } else {
+        [self showLoginView];
+    }
+}
+
+-(void)showSettingView {
+    SettingViewController* viewController = [[SettingViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+//show login view modally
+-(void)showLoginView {
+    LoginViewController* viewController = [[LoginViewController alloc] init];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 -(void)onRefresh {
@@ -49,6 +87,7 @@
         if (succeeded) {
             // The object has been saved.
             NSLog(@"Message sent: %@", message[kMessageTextPropertyName]);
+            [self onRefresh];
         } else {
             // There was a problem, check error.description
             NSString *errorString = [error userInfo][@"error"];
@@ -60,6 +99,7 @@
 - (void) retrieveMessages {
     PFQuery *query = [PFQuery queryWithClassName:kMessageClassName];
     //[query whereKey:@"playerName" equalTo:@"Dan Stemkoski"];
+    [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
