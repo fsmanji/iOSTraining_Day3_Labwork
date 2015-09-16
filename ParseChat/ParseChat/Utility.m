@@ -10,6 +10,9 @@
 
 @implementation Utility
 
+NSString *kMessageClassName = @"Message";
+NSString *kMessageTextPropertyName = @"text";
+
 +(void)showAlert:(id)target with:(NSString *)title withMessage:(NSString *)message {
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title

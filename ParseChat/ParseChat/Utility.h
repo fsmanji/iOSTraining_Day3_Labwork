@@ -11,6 +11,9 @@
 
 @interface Utility : NSObject
 
+extern NSString *kMessageClassName;
+extern NSString *kMessageTextPropertyName;
+
 +(void)showAlert:(id)target with:(NSString *)title withMessage:(NSString *)message;
 
 @end
