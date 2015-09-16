@@ -39,11 +39,11 @@
     }
 }
 
-
+//show login view modally
 -(void)showLoginView {
     LoginViewController* viewController = [[LoginViewController alloc] init];
-    [self.navigationController removeFromParentViewController];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 @end

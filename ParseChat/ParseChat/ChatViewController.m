@@ -87,6 +87,7 @@
         if (succeeded) {
             // The object has been saved.
             NSLog(@"Message sent: %@", message[kMessageTextPropertyName]);
+            self.textInput.text = @"";
             [self onRefresh];
         } else {
             // There was a problem, check error.description
