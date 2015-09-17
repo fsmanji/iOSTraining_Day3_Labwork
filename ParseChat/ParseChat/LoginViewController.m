@@ -12,6 +12,8 @@
 #import "AccountManager.h"
 #import "ChatViewController.h"
 #import "SettingViewController.h"
+#import <ParseFacebookUtilsv4/PFFacebookUtils.h>
+
 
 @interface LoginViewController ()
 
@@ -48,6 +50,16 @@
     self.passwordInput.text = _accountManager.password;
 }
 
+- (IBAction)loginWithFacebook:(id)sender {
+    [PFFacebookUtils logInInBackgroundWithReadPermissions:nil block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+            [Utility showAlert:self with:@"Signin Failed" withMessage:@"Uh oh. The user cancelled the Facebook login."];
+        } else{
+            [self exitView];
+        }
+    }];
+}
 
 - (IBAction)onSignInClicked:(id)sender {
     
@@ -64,6 +76,7 @@
                                             [Utility showAlert:self with:@"Signin Failed" withMessage:errorString];
                                         }
                                     }];
+    
     
 }
 

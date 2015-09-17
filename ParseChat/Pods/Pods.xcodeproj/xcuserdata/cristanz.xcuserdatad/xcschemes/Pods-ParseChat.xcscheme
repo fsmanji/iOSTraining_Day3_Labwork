@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB5821BAE47CD1E90C8980D8"
+               BlueprintIdentifier = "3BB58B09A100B7D0D5397E7D"
                BuildableName = "libPods-ParseChat.a"
                BlueprintName = "Pods-ParseChat"
                ReferencedContainer = "container:Pods.xcodeproj">

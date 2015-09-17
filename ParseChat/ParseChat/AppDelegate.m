@@ -11,6 +11,8 @@
 #import "LoginViewController.h"
 #import "ChatViewController.h"
 #import "AccountManager.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ParseFacebookUtilsv4/PFFacebookUtils.h>
 
 @interface AppDelegate ()
 
@@ -35,9 +37,20 @@
     //In simulator, you need to disconnect hardware keyboard, otherwise the soft keyboard won't show up in simulator
     [self.window makeKeyAndVisible];
 
-    
+    [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
     return YES;
 }
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -53,8 +66,9 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
+
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

@@ -101,6 +101,10 @@
                     <exclude reference="wXW-7T-LrW"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="0NK-kg-7US"/>
+                    <exclude reference="N1Q-5W-Kex"/>
+                    <exclude reference="h8e-gX-oUQ"/>
+                    <exclude reference="ovK-R9-RN5"/>
                     <exclude reference="dp0-aD-RyK"/>
                     <exclude reference="hKb-bX-yHU"/>
                     <exclude reference="4ua-X6-CBe"/>
@@ -108,10 +112,6 @@
                     <exclude reference="VPJ-0q-Dw3"/>
                     <exclude reference="VgT-Qz-3Zi"/>
                     <exclude reference="djh-vD-wkC"/>
-                    <exclude reference="0NK-kg-7US"/>
-                    <exclude reference="N1Q-5W-Kex"/>
-                    <exclude reference="h8e-gX-oUQ"/>
-                    <exclude reference="ovK-R9-RN5"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -120,6 +120,10 @@
                     <include reference="wXW-7T-LrW"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="0NK-kg-7US"/>
+                    <include reference="N1Q-5W-Kex"/>
+                    <include reference="h8e-gX-oUQ"/>
+                    <include reference="ovK-R9-RN5"/>
                     <include reference="dp0-aD-RyK"/>
                     <include reference="hKb-bX-yHU"/>
                     <include reference="4ua-X6-CBe"/>
@@ -127,10 +131,6 @@
                     <include reference="VPJ-0q-Dw3"/>
                     <include reference="VgT-Qz-3Zi"/>
                     <include reference="djh-vD-wkC"/>
-                    <include reference="0NK-kg-7US"/>
-                    <include reference="N1Q-5W-Kex"/>
-                    <include reference="h8e-gX-oUQ"/>
-                    <include reference="ovK-R9-RN5"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="279" y="321"/>
